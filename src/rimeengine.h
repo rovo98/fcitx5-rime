@@ -86,6 +86,12 @@ FCITX_CONFIGURATION(
     // On Linux only cursor position is available so this pins candidate window
     // while typing. On macOS any position within embedded preedit is available
     // so this is unnecessary. On Android there is no candidate window yet.
+    Option<bool> showPreeditInApplication{this, "PreeditInApplication",
+                                          _("Show preedit within application"),
+                                          true};
+    Option<bool> flypyHideInputPannel{
+        this, "flypyHideInputPannel",
+        _("auto hide the input pannel flypyly(by '`')"), true};
     Option<bool> preeditCursorPositionAtBeginning{
         this, "PreeditCursorPositionAtBeginning",
         _("Fix embedded preedit cursor at the beginning of the preedit"),
