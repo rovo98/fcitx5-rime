@@ -34,6 +34,9 @@ FCITX_CONFIGURATION(
     Option<bool> showPreeditInApplication{this, "PreeditInApplication",
                                           _("Show preedit within application"),
                                           true};
+    Option<bool> flypyHideInputPannel{
+        this, "flypyHideInputPannel",
+        _("auto hide the input pannel flypyly(by '`')"), true};
     Option<bool> preeditCursorPositionAtBeginning{
         this, "PreeditCursorPositionAtBeginning",
         _("Fix embedded preedit cursor at the beginning of the preedit"), true};
