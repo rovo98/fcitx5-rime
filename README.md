@@ -19,6 +19,10 @@ cd fcitx5-rime/quickStart
 sudo sh quickInstall.sh
 ```
 
+## 说明
+关于application preedit的显示，以global的为准，rime的只做拼音/中文的切换。
+效果图对应的配置是，global preedit开启，rime preedit不开启。
+
 ## VersionInfo
 - fcitx5: 5.0.19
 - fcitx5-rime: 5.0.14-1
