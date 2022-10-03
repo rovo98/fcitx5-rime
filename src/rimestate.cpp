@@ -312,6 +312,8 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
             (allPreedit.find("ox") != 0 || allPreedit.length() <= 2)
             ) {
         inputPanel.setCandidateList(nullptr);
+        Text newPreedit;
+        inputPanel.setPreedit(newPreedit);
     }
     if (!keyRelease || !oldEmptyExceptAux || !newEmptyExceptAux) {
         ic->updateUserInterface(UserInterfaceComponent::InputPanel);
