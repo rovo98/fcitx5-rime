@@ -293,7 +293,7 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
             (allPreedit.find("ot") != 0 || allPreedit.length() <= 2) &&
             (allPreedit.find("ox") != 0 || allPreedit.length() <= 2)
             ) {
-        inputPanel.reset();
+        inputPanel.setCandidateList(nullptr);
     }
     if (!keyRelease || !oldEmptyExceptAux || !newEmptyExceptAux) {
         ic->updateUserInterface(UserInterfaceComponent::InputPanel);
