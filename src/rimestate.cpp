@@ -279,6 +279,8 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
     }
     bool oldEmptyExceptAux = emptyExceptAux(inputPanel);
 
+    std::string allPreedit("");
+
     do {
         auto api = engine_->api();
         if (api->is_maintenance_mode()) {
@@ -294,6 +296,10 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
             break;
         }
 
+        if (context.composition.preedit){
+            allPreedit += context.composition.preedit;
+        }
+        
         updatePreedit(ic, context);
 
         if (context.menu.num_candidates) {
@@ -322,6 +328,15 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
         ic->updateUserInterface(UserInterfaceComponent::StatusArea);
     }
 
+    if(engine_->config().flypyHideInputPannel.value() && 
+            allPreedit.find("`") == std::string::npos &&
+            allPreedit.find("ob") != 0 &&
+            allPreedit.find("of") != 0 &&
+            (allPreedit.find("ot") != 0 || allPreedit.length() <= 2) &&
+            allPreedit.find("ox") != 0
+            ) {
+        inputPanel.reset();
+    }
     if (!keyRelease || !oldEmptyExceptAux || !newEmptyExceptAux) {
         ic->updateUserInterface(UserInterfaceComponent::InputPanel);
     }
