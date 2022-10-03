@@ -7,7 +7,7 @@
 
 ## 效果
 
-！[](assets/2.png)
+![](assets/2.png)
 
 ![](assets/1.gif)
 
