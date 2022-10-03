@@ -282,12 +282,13 @@ void RimeState::updateUI(InputContext *ic, bool keyRelease) {
         ic->updateUserInterface(UserInterfaceComponent::StatusArea);
     }
 
+    // flypy hiding candidate list except the following conditions
     if(engine_->config().flypyHideInputPannel.value() && 
             allPreedit.find("`") == std::string::npos &&
-            allPreedit.find("ob") != 0 &&
-            allPreedit.find("of") != 0 &&
+            (allPreedit.find("ob") != 0 || allPreedit.length() <= 2) &&
+            (allPreedit.find("of") != 0 || allPreedit.length() <= 2) &&
             (allPreedit.find("ot") != 0 || allPreedit.length() <= 2) &&
-            allPreedit.find("ox") != 0
+            (allPreedit.find("ox") != 0 || allPreedit.length() <= 2)
             ) {
         inputPanel.reset();
     }
