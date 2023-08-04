@@ -20,8 +20,8 @@ sudo sh quickInstall.sh
 ```
 
 ## VersionInfo
-- fcitx5: 5.0.19
-- fcitx5-rime: 5.0.14-1
+- fcitx5: 5.0.19+
+- fcitx5-rime: 5.0.14+
 - cmake: 3.23.2
 - make: GNU Make 4.3
 - gcc: 12.1.0
