@@ -14,8 +14,13 @@
 ## 快速开始
 > 要求对应的fcitx5版本为5.0.19，其他版本可能出现在前后不兼容问题（不过可以试试看）
 ```sh
-git clone https://github.com/dcLunatic/fcitx5-rime.git
-cd fcitx5-rime/quickStart
+# build the rime.so
+cmake . && make rime
+
+cp src/rime.so ./quickStart/
+
+# replace the so file and restart the fcitx5 
+cd ./quickStart
 sudo sh quickInstall.sh
 ```
 
